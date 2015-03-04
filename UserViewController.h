@@ -10,6 +10,8 @@
 
 @interface UserViewController : UIViewController{
     IBOutlet UITextField *nameField;
+    IBOutlet UIButton *ketteiButton;
 }
 
+-(IBAction)kettei;
 @end

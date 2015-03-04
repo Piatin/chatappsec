@@ -18,8 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   
+}
+
+-(IBAction)done{
     PFObject *chatRoom = [PFObject objectWithClassName:@"chatRoom"];
     chatRoom[@"roomName"]=roomField.text;
+    [chatRoom saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,8 @@
 
 @interface RoomViewController : UIViewController{
     IBOutlet UITextField *roomField;
+    IBOutlet UIButton *doneButton;
 }
 
+-(IBAction)done;
 @end

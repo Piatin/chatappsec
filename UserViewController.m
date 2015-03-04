@@ -19,10 +19,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    PFObject *chatMember = [PFObject objectWithClassName:@"chatMember"];
-    chatMember[@"userName"]=nameField.text;
 }
 
+-(IBAction)kettei{
+    
+    PFObject *chatMember = [PFObject objectWithClassName:@"chatMember"];
+    chatMember[@"userName"]=nameField.text;
+    [chatMember saveInBackground];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
