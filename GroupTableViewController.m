@@ -7,8 +7,9 @@
 //
 
 #import "GroupTableViewController.h"
+#import <Parse/Parse.h>
 
-@interface GroupTableViewController ()
+@interface GroupTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -17,13 +18,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    PFQuery *query = [PFQuery queryWithClassName:@"chatRoom"];
+    [query getObjectInBackgroundWithId:@"roomName" block:^(PFObject *chatRoom, NSError *error) {
+        // Do something with the returned PFObject in the gameScore variable.
+        NSLog(@"%@", chatRoom);
+        roomArray = [[NSMutableArray alloc]init];
+        [roomArray addObject:query];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+       
+    }];
+    
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return roomArray.count;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *cellIdentifier = @"myCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+    
+    UILabel *label = (UILabel *)[cell viewWithTag:1];
+    label.text = [NSString stringWithFormat:@"%@",roomArray];
+    return cell;
+}
+//- (id)initWithCoder:(NSCoder *)decoder {
+//    self = [super initWithCoder:decoder];
+//    if (!self) {
+//        return nil;
+//    }
+//        // This table displays items in the Todo class
+//        self.parseClassName = @"Todo";
+//        self.pullToRefreshEnabled = YES;
+//        self.paginationEnabled = NO;
+//        self.objectsPerPage = 25;
+//  
+//    return self;
+//}
+//
+//- (PFQuery *)queryForTable {
+//    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+//    if (self.pullToRefreshEnabled) {
+//        query.cachePolicy = kPFCachePolicyNetworkOnly;
+//    }
+//    if (self.objects.count == 0) {
+//        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//    }
+//    [query orderByDescending:@"createdAt"];
+//    return query;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView
+//         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//                        object:(PFObject *)object {
+//    static NSString *CellIdentifier = @"Cell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+//                                      reuseIdentifier:CellIdentifier];
+//    }
+//    
+//    // Configure the cell to show todo item with a priority at the bottom
+//    cell.textLabel.text = [object objectForKey:@"text"];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"Priority: %@",
+//                                 [object objectForKey:@"priority"]];
+//    
+//    return cell;
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -37,11 +104,11 @@
     return 0;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete method implementation.
+//    // Return the number of rows in the section.
+//    return 0;
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

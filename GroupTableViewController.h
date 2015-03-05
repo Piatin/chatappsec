@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface GroupTableViewController : UITableViewController
+@interface GroupTableViewController : UIViewController{
+       NSMutableArray *roomArray;
+}
 
 @end
