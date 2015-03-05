@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface GroupTableViewController : UIViewController{
-       NSMutableArray *roomArray;
+@interface GroupTableViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
+    NSMutableArray *roomArray;
+    IBOutlet UITableView *roomNameTableView;
 }
 
 @end
