@@ -64,8 +64,33 @@
     //    label.text = [NSString stringWithFormat:@"%@",roomArray];
     messageLabel.text = commentArray[indexPath.row];
     
-    return comCell;
+     [messageLabel sizeToFit];
+    
+      return comCell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 表示したい文字列
+    NSString     *text = commentArray[indexPath.row];
+    // 表示最大幅・高さ
+    CGSize     maxSize = CGSizeMake(200, CGFLOAT_MAX);
+    // 表示するフォントサイズ
+    NSDictionary *attr = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0]};
+    
+    // 以上踏まえた上で、表示に必要なサイズ
+    CGSize modifiedSize = [text boundingRectWithSize:maxSize
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attr
+                                             context:nil
+                           ].size;
+    
+    // 上下10pxずつの余白を加えたものと70pxのうち、大きい方を返す
+    return MAX(modifiedSize.height + 20, 70);
+    
+   
+}
+
 
 
 
