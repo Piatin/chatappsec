@@ -31,6 +31,7 @@
         if (!error) {
             for (PFObject *object in objects) {
                 NSLog(@"ここまで");
+                NSLog(@"ここまで%@",[object objectForKey:@"message"]);
                 [commentArray addObject:[object objectForKey:@"message"]];
                 NSLog(@"%@",commentArray);
                 NSLog(@"読み込み");
