@@ -69,7 +69,15 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%d",indexPath.section,indexPath.row);
+}
 
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if ([[segue identifier]isEqualToString:@""]){
+//        NSIndexPath *indexPath = [self.roomNameTableView indexPathForSelectedRow];
+//    }
+//}
 
 //- (id)initWithCoder:(NSCoder *)decoder {
 //    self = [super initWithCoder:decoder];

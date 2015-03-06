@@ -3,7 +3,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="font_1_honokamin.ttf">
+            <string>Honoka-Mincho</string>
+            <string>Honoka-Mincho</string>
+            <string>Honoka-Mincho</string>
+            <string>Honoka-Mincho</string>
+            <string>Honoka-Mincho</string>
+            <string>Honoka-Mincho</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Item 2-->
         <scene sceneID="1Mn-jx-a7T">
@@ -17,23 +28,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="45686151_p1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nGe-a7-gMQ">
+                                <rect key="frame" x="-184" y="0.0" width="509" height="568"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvB-B3-riT">
                                 <rect key="frame" x="70" y="157" width="178" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-6z-WGl">
-                                <rect key="frame" x="137" y="396" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="115" y="267" width="91" height="57"/>
+                                <color key="backgroundColor" red="1" green="0.5846137949458261" blue="0.55364289528141775" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Honoka-Mincho" family="Honoka Mincho" pointSize="20"/>
+                                <state key="normal" title="決定">
+                                    <color key="titleColor" red="1" green="0.14644021583424072" blue="0.064175031402770366" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="kettei" destination="LSZ-5z-eqD" eventType="touchUpInside" id="Wrr-DA-iS3"/>
                                     <segue destination="ram-OS-QUc" kind="modal" id="81x-bL-w78"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザー名の設定" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p56-kQ-Yvv">
+                                <rect key="frame" x="80" y="70" width="183" height="65"/>
+                                <fontDescription key="fontDescription" name="Honoka-Mincho" family="Honoka Mincho" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Item 2" id="w6I-fd-2l2"/>
@@ -86,9 +113,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="45686151_p2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7zz-c4-cVT">
+                                <rect key="frame" x="-170" y="0.0" width="503" height="537"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm6-eB-Ln9">
-                                <rect key="frame" x="137" y="433" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="129" y="342" width="62" height="37"/>
+                                <fontDescription key="fontDescription" name="Honoka-Mincho" family="Honoka Mincho" pointSize="20"/>
+                                <state key="normal" title="決定">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -97,14 +128,26 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U74-vj-5I9">
-                                <rect key="frame" x="56" y="183" width="217" height="30"/>
+                                <rect key="frame" x="52" y="224" width="217" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="部屋を作る" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNI-l4-J8q">
+                                <rect key="frame" x="67" y="45" width="187" height="42"/>
+                                <fontDescription key="fontDescription" name="Honoka-Mincho" family="Honoka Mincho" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="部屋の名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aM-aj-AIf">
+                                <rect key="frame" x="103" y="171" width="115" height="26"/>
+                                <fontDescription key="fontDescription" name="Honoka-Mincho" family="Honoka Mincho" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="UkV-kR-OCj"/>
+                    <tabBarItem key="tabBarItem" image="icon-user.png" id="UkV-kR-OCj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="doneButton" destination="hm6-eB-Ln9" id="SNv-DJ-hpy"/>
@@ -139,7 +182,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anh-xy-JkP">
                                                     <rect key="frame" x="51" y="8" width="218" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Honoka-Mincho" family="Honoka Mincho" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -157,7 +200,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="yot-8h-GhY"/>
+                    <tabBarItem key="tabBarItem" image="icon-chat.png" id="yot-8h-GhY"/>
                     <navigationItem key="navigationItem" id="t8F-f7-xNw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -181,34 +224,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-bx-28A">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="28x-Q1-BRt"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="K1W-da-EEf">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d0c-xG-kCS">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="comCell" id="d0c-xG-kCS">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d0c-xG-kCS" id="xKK-im-0PE">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yb-HC-IJO">
+                                                    <rect key="frame" x="13" y="9" width="61" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uo0-pP-CMj">
+                                                    <rect key="frame" x="88" y="9" width="224" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Uo0-pP-CMj" secondAttribute="bottom" constant="8" id="1Si-kK-r1i"/>
+                                                <constraint firstItem="Uo0-pP-CMj" firstAttribute="top" secondItem="xKK-im-0PE" secondAttribute="topMargin" constant="-3" id="3hY-8d-AoZ"/>
+                                                <constraint firstItem="Uo0-pP-CMj" firstAttribute="trailing" secondItem="xKK-im-0PE" secondAttribute="trailingMargin" constant="14" id="TtC-ig-QmH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZd-bx-28A">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="tintColor" red="0.655028795020689" green="0.4588462099372681" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Title" id="28x-Q1-BRt">
+                                        <barButtonItem key="leftBarButtonItem" title="退出" id="NXG-we-zgS"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="sh9-5H-FhZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="chatRoomTableView" destination="K1W-da-EEf" id="8Cy-gD-LLI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8x-2a-mvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="-237"/>
+            <point key="canvasLocation" x="484" y="-239"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="l9b-L2-EkX">
@@ -232,7 +300,13 @@
             <point key="canvasLocation" x="-496" y="-311"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="45686151_p1.jpg" width="1012" height="1012"/>
+        <image name="45686151_p2.jpg" width="1012" height="1012"/>
+        <image name="icon-chat.png" width="30" height="30"/>
+        <image name="icon-user.png" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rhJ-7p-rAf"/>
+        <segue reference="Y0Z-vY-DOJ"/>
     </inferredMetricsTieBreakers>
 </document>

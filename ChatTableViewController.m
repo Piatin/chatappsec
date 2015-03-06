@@ -7,6 +7,7 @@
 //
 
 #import "ChatTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface ChatTableViewController ()
 
@@ -17,31 +18,62 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    chatRoomTableView.dataSource = self;
+    chatRoomTableView.delegate = self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    commentArray = [[NSMutableArray alloc]init];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"chatMember"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                NSLog(@"ここまで");
+                [commentArray addObject:[object objectForKey:@"message"]];
+                NSLog(@"%@",commentArray);
+                NSLog(@"読み込み");
+            }
+            NSLog(@"message == %@",commentArray);
+            [chatRoomTableView reloadData];
+        }else{
+            NSLog(@"ERROR == %@",error);
+        }
+        
+    }];
+    
 }
+
+#pragma mark - TableView DataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return commentArray.count;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *cellIdentifier = @"messageCell";
+    
+    UITableViewCell *comCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (comCell == nil) {
+        comCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+    
+    UILabel *messageLabel = (UILabel *)[comCell viewWithTag:1];
+    //    label.text = [NSString stringWithFormat:@"%@",roomArray];
+    messageLabel.text = commentArray[indexPath.row];
+    
+    return comCell;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

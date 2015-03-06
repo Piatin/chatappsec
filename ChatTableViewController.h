@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface ChatTableViewController : UITableViewController
+@interface ChatTableViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+    NSMutableArray *commentArray;
+    IBOutlet UITableView *chatRoomTableView;
+}
 
 @end
