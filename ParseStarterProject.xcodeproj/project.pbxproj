@@ -179,15 +179,7 @@
 				257F045E1AA6E30A00528687 /* RoomViewController.h */,
 				257F045F1AA6E30A00528687 /* RoomViewController.m */,
 				257F04451AA6C66B00528687 /* Storyboard.storyboard */,
-				250E5C6B1AA92F93005EE362 /* 45686151_p2.jpg */,
-				250E5C6C1AA92F93005EE362 /* 45686151_p4.jpg */,
-				250E5C691AA92F12005EE362 /* 45686151_p1.jpg */,
-				250E5C611AA92CDD005EE362 /* icon-chat.png */,
-				250E5C621AA92CDD005EE362 /* icon-chat@2x.png */,
-				250E5C631AA92CDD005EE362 /* icon-user.png */,
-				250E5C641AA92CDD005EE362 /* icon-user@2x.png */,
-				250E5C601AA925F3005EE362 /* font_1_honokamin.ttf */,
-				250E5C5E1AA92571005EE362 /* 19433510_p2.png */,
+				250E5C701AA964C7005EE362 /* picture */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 			);
 			path = ParseStarterProject;
@@ -206,6 +198,22 @@
 				09ABC07E13A1D52D009C3FCF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		250E5C701AA964C7005EE362 /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				250E5C6B1AA92F93005EE362 /* 45686151_p2.jpg */,
+				250E5C6C1AA92F93005EE362 /* 45686151_p4.jpg */,
+				250E5C691AA92F12005EE362 /* 45686151_p1.jpg */,
+				250E5C611AA92CDD005EE362 /* icon-chat.png */,
+				250E5C621AA92CDD005EE362 /* icon-chat@2x.png */,
+				250E5C631AA92CDD005EE362 /* icon-user.png */,
+				250E5C641AA92CDD005EE362 /* icon-user@2x.png */,
+				250E5C601AA925F3005EE362 /* font_1_honokamin.ttf */,
+				250E5C5E1AA92571005EE362 /* 19433510_p2.png */,
+			);
+			name = picture;
 			sourceTree = "<group>";
 		};
 		81A6CA5E1A2EA0B800297C39 /* System Frameworks */ = {

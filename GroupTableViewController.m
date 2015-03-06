@@ -30,8 +30,10 @@
                 
                 [roomArray addObject:[object objectForKey:@"roomName"]];
             }
+            
             NSLog(@"roomName == %@", roomArray);
             [roomNameTableView reloadData];
+            
         }else {
             NSLog(@"ERROR == %@", error);
         }
